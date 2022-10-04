@@ -1,0 +1,63 @@
+/* google font */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
+
+/* general text styling */
+body {
+    font-family: Quicksand, sans-serif;
+    background-color: #FFE4C4;
+}
+
+h1 {
+    font-size: xxx-large;
+    color: #A0522D;
+    padding: 25px;
+    text-align: center;
+}
+
+h2 {
+    font-size: x-large;
+    color: #A0522D;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+/* homepage container */
+.container {
+    top: 50%;
+    left: 50%;
+    width: 50%;
+    height: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #DEB887;
+    position: fixed;
+    border-radius: 25px;
+}
+
+/* inital page name form */
+form {
+    text-align: center;
+    padding: 10%;
+}
+
+.name {
+    background: transparent;
+    border: 1px solid black;
+    border-radius: 25px;
+    width: 50%;
+    height: 40px;
+}
+
+.submit {
+    margin: 30px;
+    height: 50px;
+    width: 50%;
+    font-size: medium;
+    background-color: #ffe4c4d9;
+}
+
+.submit:hover {
+    background-color: #A0522D;
+    color: white;
+    cursor: pointer;
+}
