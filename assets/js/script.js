@@ -12,11 +12,14 @@ function getName(event){
     addUsersName.innerHTML = `<h2>${userName}</h2>`
 }
 
-// click on general knowledge to start that quiz
+// load general knowledge page to start that quiz
 
 function startGeneral(event) {
-    window.location.href="../../general.html";
-}
+    window.onload = sendApiRequest
+    async function sendApiRequest(){
+        let response = await fetch(`https://opentdb.com/api.php?amount=1&category=9&difficulty=easy&type=multiple`);
+        console.log(response)
+        
+    }
 
-let generalQuiz = document.getElementById('general');
-generalQuiz.addEventListener('click', startGeneral);
+}
