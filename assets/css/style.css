@@ -61,3 +61,36 @@ form {
     color: white;
     cursor: pointer;
 }
+
+
+/* quiz container */
+.quiz-container {
+    top: 50%;
+    left: 50%;
+    width: 75%;
+    height: 75%;
+    transform: translate(-50%, -50%);
+    background-color: #DEB887;
+    position: fixed;
+    border-radius: 25px;
+}
+
+/* quiz text inputs */
+div button {
+    color: #8B4513;
+    background-color: #ffe4c4d9;
+    border: 2px solid #A0522D;
+    width: 75%;
+    margin: 5%;
+    border-radius: 25px;
+    margin: 5px 13%;
+    height: 100px;
+}
+
+h1 h2 {
+    vertical-align: middle;
+}
+
+div h2:hover{
+    color: #808000;
+}
