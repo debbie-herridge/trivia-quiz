@@ -22,12 +22,18 @@ h2 {
     text-transform: uppercase;
 }
 
+h3 {
+    font-size: x-large;
+    color: #8B4513;
+    text-align: center;
+}
+
 /* homepage container */
 .container {
     top: 50%;
     left: 50%;
     width: 50%;
-    height: 50%;
+    height: 60%;
     transform: translate(-50%, -50%);
     background-color: #DEB887;
     position: fixed;
