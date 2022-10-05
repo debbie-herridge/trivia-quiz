@@ -1,33 +1,18 @@
 
-// // get name and progress to quiz
-// function getName(event){
-//     event.preventDefault();
-
-//     let userName = document.getElementById('name');
-//     console.log(userName)
-
-//     window.location.href="../../quiz.html";
-    
-//     let addUsersName = document.getElementById('name-result')
-//     addUsersName.innerHTML = `<h2>${userName}</h2>`
-// }
-
-// // load general knowledge page to start that quiz
-
-// function startGeneral(event) {
-//     window.onload = sendApiRequest
-//     async function sendApiRequest(){
-//         let response = await fetch(`https://opentdb.com/api.php?amount=1&category=9&difficulty=easy&type=multiple`);
-//         console.log(response)
-        
-//     }
-
-// }
+// save name from inital form and use to populate text on different pageXOffset
 
 
-let user = document.getElementById('username');
-let pass = document.getElementById('password');
 
-// Now you can get their values
-console.log(user.value);
-console.log(pass.value);
+// use API to fill in quiz questions and answers
+
+
+
+// give user score at end of the quiz
+
+
+
+// add tick/cross item to main quiz title after completion
+
+
+
+// pop up well done note if passed all 4 sections - if not passed all three a pop up to say try again and see if you can get all four
