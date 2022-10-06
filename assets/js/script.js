@@ -23,49 +23,44 @@ let genScore = 0;
 let genCounter = 0;
 let genQuestions = [
     {
-        "genQuestion": "When was Hubba Bubba first introduced?",
-        "correct_answer": "1979",
-        "incorrect_answers": [
-          "1984",
-          "1972",
-          "1980"
-        ]
+          genQuestion: "When was Hubba Bubba first introduced?",
+          choice1: "1979",
+          choice2: "1984",
+          choice3: "1972",
+          choice4: "1980",
+          answer: 1,
       },
       {
-        "genQuestion": "What was Mountain Dew&#039;s original slogan?",
-        "correct_answer": "Yahoo! Mountain Dew... It&#039;ll tickle your innards!",
-        "incorrect_answers": [
-          "Give Me A Dew",
-          "Do The Dew",
-          "Get&#039; that barefoot feelin&#039; drinkin&#039; Mountain Dew"
-        ]
+          genQuestion: "What was Mountain Dew's original slogan?",
+          choice1: "Give Me A Dew",
+          choice2: "Do The Dew",
+          choice3: "Yahoo! Mountain Dew... It'll tickle your innards!",
+          choice4: "Get' that barefoot feelin'; drinkin'; Mountain Dew",
+          answer: 3,
       },
       {
-        "genQuestion": "Who founded the Khan Academy?",
-        "correct_answer": "Sal Khan",
-        "incorrect_answers": [
-          "Ben Khan",
-          "Kitt Khan",
-          "Adel Khan"
-        ]
+          genQuestion: "Who founded the Khan Academy?",
+          choice1: "Ben Khan",
+          choice2: "Kitt Khan",
+          choice3: "Adel Khan",
+          choice4: "Sal Khan",
+          answer: 4,
       },
       {
-        "genQuestion": "Located in Chile, El Teniente is the world&#039;s largest underground mine for what metal?",
-        "correct_answer": "Copper",
-        "incorrect_answers": [
-          "Iron",
-          "Nickel",
-          "Silver"
-        ]
+          genQuestion: "Located in Chile, El Teniente is the world's largest underground mine for what metal?",
+          choice1: "Iron",
+          choice2: "Copper",
+          choice3: "Nickel",
+          choice4: "Silver",
+          answer: 2,
       },
       {
-        "genQuestion": "Who invented the first ever chocolate bar, in 1847?",
-        "correct_answer": "Joseph Fry",
-        "incorrect_answers": [
-          "Andrew Johnson",
-          "John Cadbury",
-          "John Tyler"
-        ]
+          genQuestion: "Who invented the first ever chocolate bar, in 1847?",
+          choice1: "Andrew Johnson",
+          choice2: "John Cadbury",
+          choice3: "John Tyler",
+          choice4: "Joseph Fry",
+          answer: 4,
       }
 ]
 
@@ -85,6 +80,11 @@ function newGenQuestion(){
     const genIndex = Math.floor(Math.random() * genQuestions.length);
     genCurrentQuestion = genQuestions[genIndex];
     genQuestion.innerText = genCurrentQuestion.genQuestion;
+
+    genChoices.forEach( choice => {
+      const number = choice.dataset['number'];
+      choice.innerText = genCurrentQuestion['choice' + number]
+    })
 }
 
 
