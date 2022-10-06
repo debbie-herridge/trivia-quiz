@@ -10,6 +10,14 @@ function showName() {
 };
 
 
+// save users subject choice
+function chooseSubject(clicked_id){
+  var usersChoice = (clicked_id);
+  localStorage.setItem('userChoice', usersChoice);
+  
+  window.location.assign("/start-quiz.html")
+}
+
 
 // pull ID's for quiz questions and answers
 const question = document.getElementById('question');
