@@ -6,7 +6,8 @@ function getName(){
 
 // on load of quiz game retrieve users name
 function showName() {
-    document.getElementById("name-result").innerText = sessionStorage.getItem('userName');
+    updateName = sessionStorage.getItem('userName')
+    document.getElementById("name-result").innerText = `Welcome ${updateName}!`
 };
 
 
@@ -267,9 +268,8 @@ incrementScore = num => {
 const newScore = localStorage.getItem('')
 
 // Give user message at end of the quiz
-function saveGenScore(event){
+function nextSubject(event){
     event.preventDefault();
-
     window.location.assign("/quiz.html")
 }
 

@@ -29,7 +29,7 @@ h3 {
 }
 
 .intro-titles {
-    margin:0;
+    margin:50px;
     padding:0;
 }
 
@@ -53,18 +53,24 @@ form {
 
 .name {
     background: transparent;
-    border: 1px solid black;
+    border: 3px solid #A0522D;
     border-radius: 25px;
-    width: 50%;
+    width: 240px;
     height: 40px;
+}
+
+input::placeholder {
+    text-align: center;
+    color: #404040;
 }
 
 .submit {
     margin: 30px;
     height: 50px;
-    width: 50%;
+    width: 250px;
     font-size: medium;
     background-color: #ffe4c4d9;
+    border: 3px solid #A0522D;
 }
 
 .submit:hover {
@@ -117,4 +123,12 @@ div h2:hover{
 
 .incorrect {
     background-color: red;
+}
+
+footer {
+    text-align: center;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
 }
