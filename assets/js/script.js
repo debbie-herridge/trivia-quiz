@@ -239,19 +239,27 @@ choices.forEach(choice => {
 
     const selectedChoice = e.target;
     const selectedAnswer = selectedChoice.dataset["number"];
+    const correctAnswer = currentQuestion.answer;
     
     const classToApply =
     selectedAnswer == currentQuestion.answer ? "correct" : "incorrect";
 
     if(classToApply === "correct") {
       incrementScore(correctBonus);
-    }
-  
-    selectedChoice.parentElement.classList.add(classToApply);
-    setTimeout(() => {
+
+      selectedChoice.parentElement.classList.add(classToApply);
+      setTimeout(() => {
       selectedChoice.parentElement.classList.remove(classToApply);
+      }, 1000);
       newQuestion(); 
-    }, 1000);
+    } else {
+      correctAnswer.parentElement.classList.add("correct");
+      setTimeout(() => {
+      correctAnswer.parentElement.classList.remove("correct");
+      }, 1000);
+      newQuestion(); 
+    }
+
   });
 });
 

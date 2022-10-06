@@ -9,7 +9,6 @@ body {
 }
 
 h1 {
-    font-size: xxx-large;
     color: #A0522D;
     padding: 25px;
     text-align: center;
@@ -45,6 +44,11 @@ h3 {
     border-radius: 25px;
 }
 
+#heading {
+    font-size: xxx-large;
+    margin: 50px 0;
+}
+
 /* inital page name form */
 form {
     text-align: center;
@@ -58,6 +62,10 @@ form {
     width: 240px;
     height: 40px;
     outline: none;
+}
+
+input {
+    text-align: center;
 }
 
 input::placeholder {
