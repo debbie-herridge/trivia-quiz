@@ -210,7 +210,8 @@ function startGame(){
 function newQuestion(){
 
   if(questions.length === 0 || counter >= maxQuestions){
-    localStorage.setItem('newScore', score);
+    let subject = localStorage.getItem('userChoice');
+    localStorage.setItem(subject, score);
     return window.location.assign("/end-quiz.html")
   }
 
@@ -273,18 +274,11 @@ function saveGenScore(event){
 }
 
 
-
-
-
-
 // add tick/cross item to main quiz title after completion
 
 
 
-// pop up well done note if passed all 4 sections - if not passed all three a pop up to say try again and see if you can get all four
-
-
-
+// change welcome 'name' on homepage to well done message
 
 
 

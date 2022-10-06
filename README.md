@@ -69,3 +69,5 @@ https://www.youtube.com/watch?v=SgJ_femmsfg
 https://www.youtube.com/watch?v=zgHim4ZDpZY
 
 https://stackoverflow.com/questions/35329180/localstorage-save-name-through-form-show-on-other-page
+
+https://stackoverflow.com/questions/4825295/onclick-to-get-the-id-of-the-clicked-button
