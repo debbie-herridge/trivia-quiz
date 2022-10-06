@@ -18,7 +18,7 @@ const genQuestion = document.getElementById('gen-question');
 const genChoices = Array.from(document.getElementsByClassName('gen-choices'));
 
 let genCurrentQuestion = {};
-let genAccepting = true;
+let genAccepting = false;
 let genScore = 0;
 let genCounter = 0;
 let genQuestions = [
@@ -64,8 +64,8 @@ let genQuestions = [
       }
 ]
 
-const genCorrectBonus = 1;
-const genMaxQuestions = 5;
+const CorrectBonus = 1;
+const MaxQuestions = 5;
 
 function startGenGame(){
     genCounter = 0;
@@ -76,6 +76,11 @@ function startGenGame(){
 }
 
 function newGenQuestion(){
+
+    if(genQuestions.length === 0 || genCounter >= MaxQuestions){
+      return window.location.assign("/quiz.html")
+    }
+
     genCounter++;
     const genIndex = Math.floor(Math.random() * genQuestions.length);
     genCurrentQuestion = genQuestions[genIndex];
@@ -84,8 +89,25 @@ function newGenQuestion(){
     genChoices.forEach( choice => {
       const number = choice.dataset['number'];
       choice.innerText = genCurrentQuestion['choice' + number]
-    })
-}
+    });
+
+    genQuestions.splice(genIndex, 1);
+
+    genAccepting = true;
+};
+
+genChoices.forEach(choice => {
+  choice.addEventListener("click", e => {
+    if(!genAccepting) return;
+
+    genAccepting = false;
+
+    const genSelectedChoice = e.target;
+    const genSelectedAnswer = genSelectedChoice.dataset["number"];
+    
+    newGenQuestion();
+  })
+});
 
 
 
