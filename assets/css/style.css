@@ -38,7 +38,7 @@ h3 {
     top: 50%;
     left: 50%;
     width: 50%;
-    height: 60%;
+    height: auto;
     transform: translate(-50%, -50%);
     background-color: #DEB887;
     position: fixed;
@@ -57,6 +57,7 @@ form {
     border-radius: 25px;
     width: 240px;
     height: 40px;
+    outline: none;
 }
 
 input::placeholder {
@@ -64,7 +65,7 @@ input::placeholder {
     color: #404040;
 }
 
-.submit {
+#submit {
     margin: 30px;
     height: 50px;
     width: 250px;
@@ -73,7 +74,7 @@ input::placeholder {
     border: 3px solid #A0522D;
 }
 
-.submit:hover {
+#submit:hover {
     background-color: #A0522D;
     color: white;
     cursor: pointer;
@@ -85,7 +86,7 @@ input::placeholder {
     top: 50%;
     left: 50%;
     width: 75%;
-    height: 75%;
+    height: auto;
     transform: translate(-50%, -50%);
     background-color: #DEB887;
     position: fixed;
@@ -112,17 +113,38 @@ h1 h2 {
     vertical-align: middle;
 }
 
-div h2:hover{
-    color: #808000;
+div h1 {
+    font-size: 200%;
 }
 
+div p {
+    color: #8B4513;
+    background-color: #ffe4c4d9;
+    border: 2px solid #A0522D;
+    width: 75%;
+    margin: 5%;
+    border-radius: 25px;
+    margin: 5px 13%;
+    height: 100px;
+}
 
+div h2:hover{
+    color: #DEB887;
+}
+
+.choice-section {
+    margin: 30px 0;
+}
+
+/* chosen answer responses */
 .correct {
-    background-color: green;
+    background-color: #2E8B57;
+    border: none;
 }
 
 .incorrect {
-    background-color: red;
+    background-color: #FA8072;
+    border: none;
 }
 
 footer {
@@ -131,4 +153,37 @@ footer {
     left: 0;
     bottom: 0;
     width: 100%;
+}
+
+/* end page */
+
+#end-page {
+    height:auto;
+}
+
+#end-page:hover {
+    border: 3px outset #A0522D;
+    cursor: pointer; 
+}
+
+
+/* media queries */
+
+@media (max-width: 1000px) {
+    .container {
+        width:70%;
+    }
+}
+
+@media (max-width: 560px) {
+    #submit {
+        width: 40%;
+    }
+    .name {
+        width: 70%;
+    }
+    h1 {
+        margin: 0;
+        padding: 0;
+    }
 }

@@ -12,14 +12,26 @@
 <body onload="startGame()">
     <div class="quiz-container">
         <h1 id="question">Question</h1>
-        <div><p class="choices" data-number="1">A</p></div>
-        <div><p class="choices" data-number="2">B</p></div>
-        <div><p class="choices" data-number="3">C</p></div>
-        <div><p class="choices" data-number="4">D</p></div>
+        <div class="choice-section">
+            <button>
+                <h3 class="choices" data-number="1">A</h3>
+            </button>
+            <button>
+                <h3 class="choices" data-number="2">B</h3>
+            </button>
+            <button>
+                <h3 class="choices" data-number="3">C</h3>
+            </button>
+            <button>
+                <h3 class="choices" data-number="4">D</h3>
+            </button>
+        </div>
     </div>
 
     <h2>Score:<span id="score">0</span></h2>
-
+    <div>
+        <footer><h5>Debbie Herridge</h5></footer>
+    </div>
     <script src="assets/js/script.js"></script>
 </body>
 </html>
