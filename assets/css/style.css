@@ -109,3 +109,12 @@ h1 h2 {
 div h2:hover{
     color: #808000;
 }
+
+
+.correct {
+    background-color: green;
+}
+
+.incorrect {
+    background-color: red;
+}

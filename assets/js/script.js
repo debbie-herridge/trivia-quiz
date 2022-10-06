@@ -105,8 +105,15 @@ genChoices.forEach(choice => {
     const genSelectedChoice = e.target;
     const genSelectedAnswer = genSelectedChoice.dataset["number"];
     
-    newGenQuestion();
-  })
+    const genClassToApply =
+      genSelectedAnswer == genCurrentQuestion.answer ? "correct" : "incorrect";
+  
+    genSelectedChoice.parentElement.classList.add(genClassToApply);
+    setTimeout(() => {
+      genSelectedChoice.parentElement.classList.remove(genClassToApply);
+      newGenQuestion(); 
+    }, 1000);
+  });
 });
 
 
