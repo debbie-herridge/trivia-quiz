@@ -9,130 +9,139 @@ function showName() {
     document.getElementById("name-result").innerText = sessionStorage.getItem('userName');
 };
 
-// GENERAL KNOWLEDGE
+
+
 // pull ID's for quiz questions and answers
-const genQuestion = document.getElementById('gen-question');
-const genChoices = Array.from(document.getElementsByClassName('gen-choices'));
+const question = document.getElementById('question');
+const choices = Array.from(document.getElementsByClassName('choices'));
 
 // Set variables
-let genCurrentQuestion = {};
-let genAccepting = false;
-let genQuestions = [
-    {
-          genQuestion: "When was Hubba Bubba first introduced?",
-          choice1: "1979",
-          choice2: "1984",
-          choice3: "1972",
-          choice4: "1980",
-          answer: 1,
-      },
-      {
-          genQuestion: "What was Mountain Dew's original slogan?",
-          choice1: "Give Me A Dew",
-          choice2: "Do The Dew",
-          choice3: "Yahoo! Mountain Dew... It'll tickle your innards!",
-          choice4: "Get' that barefoot feelin'; drinkin'; Mountain Dew",
-          answer: 3,
-      },
-      {
-          genQuestion: "Who founded the Khan Academy?",
-          choice1: "Ben Khan",
-          choice2: "Kitt Khan",
-          choice3: "Adel Khan",
-          choice4: "Sal Khan",
-          answer: 4,
-      },
-      {
-          genQuestion: "Located in Chile, El Teniente is the world's largest underground mine for what metal?",
-          choice1: "Iron",
-          choice2: "Copper",
-          choice3: "Nickel",
-          choice4: "Silver",
-          answer: 2,
-      },
-      {
-          genQuestion: "Who invented the first ever chocolate bar, in 1847?",
-          choice1: "Andrew Johnson",
-          choice2: "John Cadbury",
-          choice3: "John Tyler",
-          choice4: "Joseph Fry",
-          answer: 4,
-      }
-]
-const MaxQuestions = 5;
-let genCounter = 0;
+let currentQuestion = {};
+let acceptingAnswer = false;
 
-// Game Functions
-function startGenGame(){
-    genCounter = 0;
-    genScore = 0;
-    genQuestions = [...genQuestions];
-    console.log(genQuestions);
-    newGenQuestion();
+let questions = { 
+  "generalKnowledge":[
+    {
+    genQuestion: "When was Hubba Bubba first introduced?",
+    choice1: "1979",
+    choice2: "1984",
+    choice3: "1972",
+    choice4: "1980",
+    answer: 1,
+},
+{
+    genQuestion: "What was Mountain Dew's original slogan?",
+    choice1: "Give Me A Dew",
+    choice2: "Do The Dew",
+    choice3: "Yahoo! Mountain Dew... It'll tickle your innards!",
+    choice4: "Get' that barefoot feelin'; drinkin'; Mountain Dew",
+    answer: 3,
+},
+{
+    genQuestion: "Who founded the Khan Academy?",
+    choice1: "Ben Khan",
+    choice2: "Kitt Khan",
+    choice3: "Adel Khan",
+    choice4: "Sal Khan",
+    answer: 4,
+},
+{
+    genQuestion: "Located in Chile, El Teniente is the world's largest underground mine for what metal?",
+    choice1: "Iron",
+    choice2: "Copper",
+    choice3: "Nickel",
+    choice4: "Silver",
+    answer: 2,
+},
+{
+    genQuestion: "Who invented the first ever chocolate bar, in 1847?",
+    choice1: "Andrew Johnson",
+    choice2: "John Cadbury",
+    choice3: "John Tyler",
+    choice4: "Joseph Fry",
+    answer: 4,
+}]
 }
 
-function newGenQuestion(){
+const maxQuestions = 5;
+let counter = 0;
 
-    if(genQuestions.length === 0 || genCounter >= MaxQuestions){
-      return window.location.assign("/general-end.html")
-    }
+// Game Functions
+function startGame(){
+  counter = 0;
+  score = 0;
+    // Getting users subject choice
+  var userChoice = localStorage.getItem('userChoice');
+  questions = [...questions[userChoice]];
+  newQuestion();
+}
 
-    genCounter++;
-    const genIndex = Math.floor(Math.random() * genQuestions.length);
-    genCurrentQuestion = genQuestions[genIndex];
-    genQuestion.innerText = genCurrentQuestion.genQuestion;
+function newQuestion(){
 
-    genChoices.forEach( choice => {
+  if(questions.length === 0 || counter >= maxQuestions){
+    localStorage.setItem('newScore', score);
+    return window.location.assign("/end-quiz.html")
+  }
+
+counter++;
+    const index = Math.floor(Math.random() * questions.length);
+    currentQuestion = questions[index];
+    questions.innerText = currentQuestion.questions;
+
+    choices.forEach( choice => {
       const number = choice.dataset['number'];
-      choice.innerText = genCurrentQuestion['choice' + number]
+      choice.innerText = currentQuestion['choice' + number]
     });
 
-    genQuestions.splice(genIndex, 1);
+    questions.splice(genIndex, 1);
 
-    genAccepting = true;
+    acceptingAnswer = true;
 };
 
-genChoices.forEach(choice => {
+choices.forEach(choice => {
   choice.addEventListener("click", e => {
-    if(!genAccepting) return;
+    if(!acceptingAnswer) return;
 
-    genAccepting = false;
+    acceptingAnswer = false;
 
-    const genSelectedChoice = e.target;
-    const genSelectedAnswer = genSelectedChoice.dataset["number"];
+    const selectedChoice = e.target;
+    const selectedAnswer = selectedChoice.dataset["number"];
     
-    const genClassToApply =
-      genSelectedAnswer == genCurrentQuestion.answer ? "correct" : "incorrect";
+    const classToApply =
+    selectedAnswer == currentQuestion.answer ? "correct" : "incorrect";
 
-    if(genClassToApply === "correct") {
-      genIncrementScore(genCorrectBonus);
+    if(classToApply === "correct") {
+      incrementScore(correctBonus);
     }
   
-    genSelectedChoice.parentElement.classList.add(genClassToApply);
+    selectedChoice.parentElement.classList.add(classToApply);
     setTimeout(() => {
-      genSelectedChoice.parentElement.classList.remove(genClassToApply);
+      selectedChoice.parentElement.classList.remove(classToApply);
       newGenQuestion(); 
     }, 1000);
   });
 });
 
-
 // Store and display score
-const genShowScore = document.getElementById('gen-score')
-let genScore = 0;
-const genCorrectBonus = 1;
+const showScore = document.getElementById('score')
+let score = 0;
+const correctBonus = 1;
 
-genIncrementScore = num => {
-  genScore += num;
-  genShowScore.innerText = genScore;
+incrementScore = num => {
+  score += num;
+  showScore.innerText = score;
 };
 
+const newScore = localStorage.getItem('')
+
+// Give user message at end of the quiz
+function saveGenScore(event){
+    e.preventDefault();
+
+}
 
 
 
-
-
-// give user score at end of the quiz
 
 
 
@@ -141,3 +150,12 @@ genIncrementScore = num => {
 
 
 // pop up well done note if passed all 4 sections - if not passed all three a pop up to say try again and see if you can get all four
+
+
+
+
+
+
+
+
+

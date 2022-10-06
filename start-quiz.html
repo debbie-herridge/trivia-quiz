@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,16 +7,19 @@
     <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
     <link rel="stylesheet" href="assets/css/style.css">
-    <title>Quiz</title>
+    <title>General Knowledge</title>
 </head>
-<body>
+<body onload="startGenGame()">
     <div class="quiz-container">
-        <h1 id="question"></h1>
-        <button id="answer1"></button>
-        <button id="answer2"></button>
-        <button id="answer3"></button>
-        <button id="answer4"></button>
+        <h1 id="question">Question</h1>
+        <div><p class="choices" data-number="1">A</p></div>
+        <div><p class="choices" data-number="2">B</p></div>
+        <div><p class="choices" data-number="3">C</p></div>
+        <div><p class="choices" data-number="4">D</p></div>
     </div>
+
+    <h2>Score:<span id="score">0</span></h2>
+
     <script src="assets/js/script.js"></script>
 </body>
 </html>
