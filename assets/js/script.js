@@ -74,7 +74,7 @@ function startGenGame(){
 function newGenQuestion(){
 
     if(genQuestions.length === 0 || genCounter >= MaxQuestions){
-      return window.location.assign("/quiz.html")
+      return window.location.assign("/general-end.html")
     }
 
     genCounter++;
