@@ -9,18 +9,14 @@ function showName() {
     document.getElementById("name-result").innerText = sessionStorage.getItem('userName');
 };
 
-
-// use API to fill in quiz questions and answers
-// general questions
-// https://opentdb.com/api.php?amount=1&category=9&difficulty=easy&type=multiple
-
+// GENERAL KNOWLEDGE
+// pull ID's for quiz questions and answers
 const genQuestion = document.getElementById('gen-question');
 const genChoices = Array.from(document.getElementsByClassName('gen-choices'));
 
+// Set variables
 let genCurrentQuestion = {};
 let genAccepting = false;
-let genScore = 0;
-let genCounter = 0;
 let genQuestions = [
     {
           genQuestion: "When was Hubba Bubba first introduced?",
@@ -63,10 +59,10 @@ let genQuestions = [
           answer: 4,
       }
 ]
-
-const CorrectBonus = 1;
 const MaxQuestions = 5;
+let genCounter = 0;
 
+// Game Functions
 function startGenGame(){
     genCounter = 0;
     genScore = 0;
@@ -107,6 +103,10 @@ genChoices.forEach(choice => {
     
     const genClassToApply =
       genSelectedAnswer == genCurrentQuestion.answer ? "correct" : "incorrect";
+
+    if(genClassToApply === "correct") {
+      genIncrementScore(genCorrectBonus);
+    }
   
     genSelectedChoice.parentElement.classList.add(genClassToApply);
     setTimeout(() => {
@@ -117,9 +117,15 @@ genChoices.forEach(choice => {
 });
 
 
+// Store and display score
+const genShowScore = document.getElementById('gen-score')
+let genScore = 0;
+const genCorrectBonus = 1;
 
-startGenGame();
-
+genIncrementScore = num => {
+  genScore += num;
+  genShowScore.innerText = genScore;
+};
 
 
 
