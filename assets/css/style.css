@@ -28,6 +28,11 @@ h3 {
     text-align: center;
 }
 
+.intro-titles {
+    margin:0;
+    padding:0;
+}
+
 /* homepage container */
 .container {
     top: 50%;

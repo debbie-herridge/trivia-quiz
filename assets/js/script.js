@@ -1,12 +1,13 @@
-// save name from inital form
-let name = document.getElementById('name')
+// using form on first place get users name and store value
+function getName(){
+    var name = document.getElementById("name").value;
+    sessionStorage.setItem('userName', name);
+}
 
-// Populate quiz home page with users name
-let updateName = document.getElementById('name-result')
-updateName.innerHTML = `<h1>Welcome ${name}!</h1>`
-
-
-
+// on load of quiz game retrieve users name
+function showName() {
+    document.getElementById("name-result").innerText = sessionStorage.getItem('userName');
+};
 
 
 
@@ -17,7 +18,8 @@ updateName.innerHTML = `<h1>Welcome ${name}!</h1>`
 
 const genQuestion = document.getElementById('gen-question');
 const genChoices = Array.from(document.getElementsByClassName('gen-choices'));
-console.log(hello);
+
+
 
 
 
@@ -28,7 +30,7 @@ console.log(hello);
 
 
 // give user score at end of the quiz
-
+let score = 0
 
 
 // add tick/cross item to main quiz title after completion
