@@ -3,7 +3,7 @@ function getName(){
     var name = document.getElementById("name").value;
     localStorage.setItem('userName', name);
 
-    window.location.assign("/quiz.html")
+    window.location.assign("quiz.html")
 }
 
 // on load of quiz game retrieve users name
@@ -18,7 +18,7 @@ function chooseSubject(clicked_id){
   var usersChoice = (clicked_id);
   localStorage.setItem('userChoice', usersChoice);
   
-  window.location.assign("/start-quiz.html")
+  window.location.assign("start-quiz.html")
 }
 
 
