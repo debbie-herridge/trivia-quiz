@@ -242,18 +242,25 @@ choices.forEach(choice => {
     const selectedChoice = e.target;
     const selectedAnswer = selectedChoice.dataset["number"];
     
-    const classToApply =
-    selectedAnswer == currentQuestion.answer ? "correct" : "incorrect";
+    const classToApply = selectedAnswer == currentQuestion.answer ? "correct" : "incorrect";
+                                                 const correctAnswer = currentQuestion.answer;
 
     if(classToApply === "correct") {
       incrementScore(correctBonus);
-    }
-  
-    selectedChoice.parentElement.classList.add(classToApply);
-    setTimeout(() => {
-      selectedChoice.parentElement.classList.remove(classToApply);
-    }, 1000);
 
+      selectedChoice.parentElement.classList.add(classToApply);
+      setTimeout(() => {
+      selectedChoice.parentElement.classList.remove(classToApply);
+      }, 1000);
+
+                                                } else {
+
+                                                  correctAnswer.parentElement.classList.add("correct");
+                                                  setTimeout(() => {
+                                                  correctAnswer.parentElement.classList.remove("correct");
+                                                  }, 1000);
+                                                }
+  
     newQuestion(); 
   });
 });
