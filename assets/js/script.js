@@ -1,12 +1,14 @@
 // using form on first place get users name and store value
 function getName(){
     var name = document.getElementById("name").value;
-    sessionStorage.setItem('userName', name);
+    localStorage.setItem('userName', name);
+
+    window.location.assign("/quiz.html")
 }
 
 // on load of quiz game retrieve users name
 function showName() {
-    updateName = sessionStorage.getItem('userName')
+    updateName = localStorage.getItem('userName')
     document.getElementById("name-result").innerText = `Welcome ${updateName}!`
 };
 
