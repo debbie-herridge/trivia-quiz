@@ -215,7 +215,7 @@ function newQuestion(){
   if(questions.length === 0 || counter >= maxQuestions){
     let subject = localStorage.getItem('userChoice');
     localStorage.setItem(subject, score);
-    return window.location.assign("/end-quiz.html")
+    return window.location.assign("end-quiz.html")
   }
 
 counter++;
@@ -273,7 +273,7 @@ const newScore = localStorage.getItem('')
 // Give user message at end of the quiz
 function nextSubject(event){
     event.preventDefault();
-    window.location.assign("/quiz.html")
+    window.location.assign("quiz.html")
 }
 
 
