@@ -225,7 +225,9 @@ counter++;
 
     choices.forEach( choice => {
       const number = choice.dataset['number'];
-      choice.innerText = currentQuestion['choice' + number]
+      choice.innerText = currentQuestion['choice' + number];
+
+      choice.id = currentQuestion['choice' + number];
     });
 
     questions.splice(index, 1);
@@ -242,8 +244,12 @@ choices.forEach(choice => {
     const selectedChoice = e.target;
     const selectedAnswer = selectedChoice.dataset["number"];
     
-    const classToApply = selectedAnswer == currentQuestion.answer ? "correct" : "incorrect";
-                                                 const correctAnswer = currentQuestion.answer;
+    var classToApply = selectedAnswer == currentQuestion.answer ? "correct" : "incorrect";
+    console.log(classToApply);
+                                                 var correctAnswer = currentQuestion["choice"+4]
+    console.log('fgueigfuiebgf');
+    console.log(correctAnswer);
+                                                
 
     if(classToApply === "correct") {
       incrementScore(correctBonus);
@@ -254,10 +260,14 @@ choices.forEach(choice => {
       }, 1000);
 
                                                 } else {
-
-                                                  correctAnswer.parentElement.classList.add("correct");
+                                                  console.log(correctAnswer.parentElement);
+                                                  let correctElement = document.getElementById(correctAnswer);
+                                                  console.log(correctElement);
+                                                  
+                                                  correctElement.parentElement.classList.add("correct");
+                                        
                                                   setTimeout(() => {
-                                                  correctAnswer.parentElement.classList.remove("correct");
+                                                  correctElement.parentElement.classList.remove("correct");
                                                   }, 1000);
                                                 }
   
