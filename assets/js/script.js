@@ -1,5 +1,5 @@
 // using form on first place get users name and store value
-function getName(){
+function getName() {
   var name = document.getElementById("name").value;
   localStorage.setItem('userName', name);
 }
@@ -7,30 +7,27 @@ function getName(){
 // on load of quiz game subject choice
 function showName() {
   // retrieve users name and populate heading
-  updateName = localStorage.getItem('userName')
-  document.getElementById("name-result").innerText = `Welcome ${updateName}!`
+  var updateName = localStorage.getItem('userName');
+  document.getElementById("name-result").innerText=`Welcome ${updateName}!`;
 
   // get variables to show previous subject and show pass or fail
   let previousGame = localStorage.getItem('userChoice');
-  console.log(previousGame);
   let showResult = document.getElementById(previousGame);
-  console.log(showResult);
   let previousScore = localStorage.getItem(previousGame);
-  console.log(previousScore);
 
   // if user got more than 3 show a tick next to subject if not display a cross
   if (previousScore >= 3){
-    showResult.innerHTML = `${previousGame} <i class="fa-solid fa-check"></i>`
+    showResult.innerHTML = `${previousGame} <i class="fa-solid fa-check"></i>`;
   } else {
-    showResult.innerHTML = `${previousGame} <i class="fa-regular fa-circle-xmark"></i>`
+    showResult.innerHTML = `${previousGame} <i class="fa-regular fa-circle-xmark"></i>`;
   }
-};
+}
 
 // save users subject choice into local storage and direct to quiz page
 function chooseSubject(clicked_id){
   var usersChoice = (clicked_id);
   localStorage.setItem('userChoice', usersChoice);
-  window.location.assign("start-quiz.html")
+  window.location.assign("start-quiz.html");
 }
 
 // put all questions into an array with their key being the subject
@@ -199,7 +196,7 @@ let questions = {
     choice4: "11",
     answer: 4,
   }]
-  }
+  };
 
 // pull ID's for quiz questions and answers
 const question = document.getElementById('question');
@@ -225,7 +222,7 @@ function newQuestion(){
     // If no questions left save score into local storage and end quiz
     let subject = localStorage.getItem('userChoice');
     localStorage.setItem(subject, score);
-    return window.location.assign("end-quiz.html")
+    return window.location.assign("end-quiz.html");
   }
   // randomise questions and insert into html
   counter++;
@@ -244,7 +241,7 @@ function newQuestion(){
   // remove question from questions array 
   questions.splice(index, 1);
   acceptingAnswer = true;
-};
+}
 
   // loop through possible choices to check if user is correct
   choices.forEach(choice => {
@@ -256,7 +253,7 @@ function newQuestion(){
   const selectedChoice = e.target;
   const selectedAnswer = selectedChoice.dataset["number"];  
   var classToApply = selectedAnswer == currentQuestion.answer ? "correct" : "incorrect";
-  var correctAnswer = currentQuestion["choice"+4]
+  var correctAnswer = currentQuestion["choice"+4];
                                                 
   // instant colour responce to show user they were correct
   if(classToApply === "correct") {
@@ -292,7 +289,7 @@ function newQuestion(){
 });
 
 // Store and display score at top
-const showScore = document.getElementById('score')
+const showScore = document.getElementById('score');
 let score = 0;
 const correctBonus = 1;
 
@@ -305,11 +302,11 @@ incrementScore = num => {
 function finalScore(){
   let completedSubject = localStorage.getItem('userChoice');
   let completedScore = localStorage.getItem(completedSubject);
-  document.getElementById("result-message").innerText = `You scored: ${completedScore} out of 5!`
+  document.getElementById("result-message").innerText = `You scored: ${completedScore} out of 5!`;
 }
 
 // Button to take user to quiz homepage to choose another subject
 function nextSubject(event){
     event.preventDefault();
-    window.location.assign("quiz.html")
+    window.location.assign("quiz.html");
 }

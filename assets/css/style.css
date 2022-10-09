@@ -33,7 +33,7 @@ button {
 }
 
 /* user introduction container */
-#intro-container{
+.beige-container{
     top: 50%;
     left: 50%;
     width: 50%;
@@ -160,6 +160,10 @@ footer {
     }
     button {
         font-family: 'Josefin Sans', sans-serif;
+    }
+    .beige-container {
+        top: 40%;
+        width: 70%;
     }
 }
 
