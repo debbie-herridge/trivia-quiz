@@ -1,6 +1,14 @@
 # Subject based triva quiz
 
-This quiz is created to test your knowledge on different subjects using a API generator to ensure the questions are new each time.
+This simple quiz is created to test the users knowledge on specific subjects. 
+
+There is a a choice of four subjects:
+- General Knowledge
+- Mythology
+- History 
+- Geography
+
+It has been built using HTML, CSS and Java, therefore it is interactive and responsive to the users inputs and choices. The quiz maintains a nude tone and simple theme, with subtle hints of colour to indictate whether the user gets a question right or wrong.
 
 To view the deployed website click [here](https://debbie-herridge.github.io/trivia-quiz/)
 
@@ -10,13 +18,15 @@ To view the deployed website click [here](https://debbie-herridge.github.io/triv
 
 ### To the user:
 
-- A fun, engaging quiz to test knowledge
-- New questions each time to make the quiz replayable and exciting
+- A simple, sleek quiz to test specific subject knowledge
+- To see and keep track of score throughout quiz
+- Instant feedback from answer input
 
 ### To the developer:
 
-- To insert an API Generator 
-- To create a clean simple quiz with personalization using JavaScript
+- To use JavaScript to respond to user interaction
+- To store data from the user and be able to retrieve and display when necessary
+- To create general functions in which the users subject choice passes through and filters out the relavant questions
 
 
 # Inital designs
@@ -31,20 +41,18 @@ To view the deployed website click [here](https://debbie-herridge.github.io/triv
 
 ## Colour scheme
 
-Using [W3School](https://www.w3schools.com/cssref/css_colors.asp) I choose a brown and beige colour scheme, by using the same pallete each page of the quiz looks uniform and the monotone nature of using the same colour pallete brings a warm tone to the visual of the quiz.
+Using [W3School](https://www.w3schools.com/cssref/css_colors.asp) I choose a brown and beige colour scheme, by using the same pallete each page of the quiz looks uniform and the monotone nature of using the same colour pallete brings a warm tone to the visual of the quiz. 
 
-Colours chosen:
-
-- Sienna #A0522D
-- Bisque #FFE4C4
-- BurlyWood #DEB887
-- SaddleBrown #8B4513
-- Olive #808000
-
+Instead of the standard red and green for displaying correct/incorrect answers I have used tones more inline with my chosen colour scheme. 
 
 ## Font
 
 Using [GoogleFonts](https://fonts.google.com/specimen/Quicksand?sort=popularity&preview.text=WHAT%20IS%20YOUR%20NAME%3F&preview.text_type=custom) I chose Quicksand as it looks smooth and joyful, which fit perfectly with the colour scheme and help aid bring that warmth into the page.
+
+## Future features:
+
+With the addition of using an API to generate the questions, rather than hard coding it into a Java array, the user would be able to replay the quiz multiple times without repeat questions. This would be more beneficial as it would keep users on the site for longer.
+
 
 
 
