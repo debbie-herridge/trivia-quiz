@@ -8,7 +8,7 @@ There is a a choice of four subjects:
 - History 
 - Geography
 
-It has been built using HTML, CSS and Java, therefore it is interactive and responsive to the users inputs and choices. The quiz maintains a nude tone and simple theme, with subtle hints of colour to indictate whether the user gets a question right or wrong.
+It has been coded using HTML, CSS and Java, therefore it is interactive and responsive to the users inputs and choices. The quiz maintains a nude tone and simple theme, with subtle hints of colour to indictate whether the user gets a question right or wrong.
 
 To view the deployed website click [here](https://debbie-herridge.github.io/trivia-quiz/)
 
@@ -19,8 +19,8 @@ To view the deployed website click [here](https://debbie-herridge.github.io/triv
 ### To the user:
 
 - A simple, sleek quiz to test specific subject knowledge
-- To see and keep track of score throughout quiz
-- Instant feedback from answer input
+- To keep track of current score throughout the quiz
+- Instant feedback from site to display correct answer
 
 ### To the developer:
 
@@ -41,15 +41,17 @@ To view the deployed website click [here](https://debbie-herridge.github.io/triv
 
 ## Colour scheme
 
-Using [W3School](https://www.w3schools.com/cssref/css_colors.asp) I choose a brown and beige colour scheme, by using the same pallete each page of the quiz looks uniform and the monotone nature of using the same colour pallete brings a warm tone to the visual of the quiz. 
+Using [W3School](https://www.w3schools.com/cssref/css_colors.asp) I choose a brown and beige colour scheme, by using the same palette on each page of the quiz it keeps consistancy, and the monotone nature of using the same colour scheme brings a warm tone to the overall visuals of the quiz. 
 
-Instead of the standard red and green for displaying correct/incorrect answers I have used tones more inline with my chosen colour scheme. 
+Instead of the standard red and green for displaying correct/incorrect answers I have used tones more inline with my chosen colour scheme.
 
 ## Font
 
 Using [GoogleFonts](https://fonts.google.com/specimen/Quicksand?sort=popularity&preview.text=WHAT%20IS%20YOUR%20NAME%3F&preview.text_type=custom) I chose Quicksand as it looks smooth and joyful, which fit perfectly with the colour scheme and help aid bring that warmth into the page.
 
-## Future features:
+As mentioned later in the design changes section, the font was later changed using media queries for smaller screens to Josefin Sans.
+
+## Future features
 
 With the addition of using an API to generate the questions, rather than hard coding it into a Java array, the user would be able to replay the quiz multiple times without repeat questions. This would be more beneficial as it would keep users on the site for longer.
 
@@ -59,49 +61,51 @@ Also in future the subject selection page will display all previous scores using
 
 ## Intro 
 
-When site is loaded users will immediately be prompted to add their name (or nickname!) into the form. 
+When site inital page is loaded, users will immediately be prompted to add their name (or nickname!) into the form. From the get-go the quiz has a inviting friendly feel about it, to help users feel intrigued and at ease.
+
 ![Name form](assets/images/username-form.png)
 
-This is marked as a requirement therefore users will not be able to progress without inputing text.
+The input field is marked as a requirement therefore users will not be able to progress without inputing text. If they try to they will be prompted to fill in the text box.
+
 ![Name prompt](assets/images/name-prompt.png)
 
 ## Subject choice section
 
-Users will be then taken to the page where they can choose the subject that they would like to be quized on. Each choice has an onClick function that will store the users section and use this information to filter out the array of questions for that specific subject.
+Users will then be taken to the page where they can choose the subject that they would like to be quizzed on. Each choice button has an onClick function that will store the users selection and use this information to filter out the array of questions for that specific subject.
 
 ![Subject choice section](assets/images/choose-subject.png)
 
 ## Quiz 
 
-It is a simple, straightforward quiz with 4 multiple choice answers and a score tracker. The score tracker uses Java to increment the score by one bonus point every time the user gets the question correct.
+It is a simple, straightforward quiz with 4 multiple choice answers and a score tracker at the top. The score tracker uses Java to increment the score by one bonus point every time the user gets the question correct.
+
 ![Quiz](assets/images/quiz-answer.png)
 
-Java will loop through the choices and decide whether the user has clicked on the correct answer or not. There are instant colour visuals to let the player know how they have answered. If they get it correct it the choice will change to green and after a short time they will move onto the next question.
+Java will loop through the choices and decide whether the user has clicked on the correct answer or not. There are instant colour visuals to let the player know how they have answered. If they get it correct their choice selection will change to green and after a short time they will automatically be move onto the next question.
 
-If the player has god the answer incorrect, their choice will change to a dull beige and the correct answer will display in green. The sleep timer to move onto the next question is slightly longer if an incorrect answer was chosen so that the user has a chance to read the correct answer.
+If the player has got the answer incorrect, their choice will change to a dull beige and the correct answer will display in green. The sleep timer to move onto the next question is slightly longer if an incorrect answer was chosen so that the user has a chance to read the correct answer.
 
 ![Answer colour response](assets/images/answer-color-response.png)
 
 ## End of quiz
 
-At the end of each subject quiz the player will be taken to the end page where they can see their score out of the total amount of questions and click a button to be redirected to the subject selection page where they can choice a different catagory.
+At the end of each subject quiz the player will be taken to the end page where they can see their score out of the total amount of questions and click a button to be redirected back to the subject selection page where they can choose a different catagory.
 
 ![End page](assets/images/end-score.png)
 
 ## Back to subject selection
 
-After finished the previous subject the users score will be logged into local storage and can be seen on the homepage of the quiz. If they scored 3 or above correct answers the subject will be displayed with a tick on the end. If they failed it will be shown with a cross.
+After finishing the previous subject the users score will be logged into local storage and can be seen on the homepage of the quiz. If they scored 3 or above correct answers the subject will be displayed with a tick on the end. If they failed it will be shown with a cross.
 
-![Updated home page](assets/images/updated-home-page.png
+![Updated home page](assets/images/updated-home-page.png)
 
 # Design changes
 
 In the initial Balsamiq wireframes the whole quiz was meant to be inside the darker beige centered container, exactly how the name form page is currently. However when veiwing on mobile devices the overall design lost its sleek apeal and became far too cramped. Therefore I chose to just keep the landing page and end results page with this style as the div's did not contain to much inside.
 
-Using media queries the font will change when the displayed on a screen as small as a phone as the font chosen originally looks smooth on the computer but sharp on smaller devices.
+Using media queries the font will change when the displayed on a small screen such as a phone, as the font chosen originally looks smooth on the computer but sharp on smaller devices.
 
 ![Mobile intro page](assets/images/mobile-intro.png)
-![Mobile Subject page](assets/images/mobile-subject-choice.png)
 
 # Testing
 
@@ -111,7 +115,7 @@ Using media queries the font will change when the displayed on a screen as small
 
 The quiz was created and coded on Google Chrome on a Mac. 
 
-It has been run on Chrome, Safari and Firefox, all are displaying as intended. The site designed looks much cleaner and sleeker on the larger screens.
+It has been played on Chrome, Safari and Firefox, all are displaying as intended. The site designed looks much cleaner and sleeker on the larger screens.
 
 ### Smaller screens / Mobile devices
 
@@ -119,20 +123,22 @@ When tested on GoogleDevTools mobile viewer - if the user has passed the General
 
 ![Mobile bug](assets/images/mobile-bug.png)
 
-However when tested on an actual mobile device the icon didn't go outside of the button it went below the text as desired. It did still have the issue of the title being shown without the space, but I expected this to be the case. There was however an issue with the text input on the form page being a slightly yellowed tone.
+However when tested on an actual mobile device the icon didn't go outside of the button it went below the text as desired. It did still have the issue of the title being shown without the space between 'General' and 'Knowledge', but I expected this to be the case. There was however an issue with the text input on the form page being a slightly yellowed tone.
 
 Device - iPhone 13:
 
-![Mobile subject screen](assets/images/mobile-intro.png)
-![Mobile text input](assets/images/mobile-bug.png)
+![Mobile subject screen](assets/images/iphone-subjects-selection.PNG)
+![Mobile text input](assets/images/iphone-text-input.PNG)
 
 The game has also been played on iPhone 11 pro max, iPhone 12, and iPhone 12 pro max using Safari. All screens show the same display. 
 
-It has only been tested on one Andriod phone and that was a Google Pixel 5, no issues reported and the feedback was: "Simple, easy, good".
+It has only been tested on one Andriod phone and that was a Google Pixel 5, no issues reported and the feedback was: "Simple, easy, good". 
 
-### Errors
+There was feedback to add a final animation after completing all four subjects which will come from later development.
 
-Another bug that was an alarming one was my deployed project kept coming up with either error 405, error 404 or error 501. I made several changes and pushing them to GitHub to view whether it has solved my deployed site error. After researching what these errors actually mean I came to realise the error was with my first page form, the form was adding 'name=' and the users input into my URL. I fixed this by adding 'method' to my form and removing the 'name=' from my input. I also had to change all file paths in JavaScript to be relative as they were previously coded as absolute. All of these combined fixed all issues and the deloyed site now works on all pages.
+## Errors
+
+A bug that was alarming was my deployed project kept coming up with either error 405, error 404 or error 501. I made several changes and pushing them to GitHub to view whether it has solved the issue on the deployed site as Port 8000 from GitHub was not showing any errors. After researching what these errors actually mean I came to realise the error was with my first page form, the form was adding 'name=' and the users input into my URL. I fixed this by adding 'method' to my form and removing the 'name=' from my input. I also had to change all file paths in JavaScript to be relative as they were previously coded as absolute. All of these combined fixed all issues and the deloyed site now works with no errors and links to all pages are working correctly.
 
 # Code validators
 
