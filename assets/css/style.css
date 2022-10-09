@@ -1,5 +1,5 @@
 /* google font */
-@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Quicksand&display=swap');
 
 
 /* general text styling */
@@ -15,7 +15,7 @@ body {
 h1 {
     font-size: 3rem;
     text-align: center;
-    margin: 0 15px;
+    margin: 10px 15px;
 }
 
 h2 {
@@ -76,7 +76,7 @@ input::placeholder {
     text-align: center;
     min-height: 300px;
     height: auto;
-    margin-top: 15%;
+    margin-top: 5%;
 }
 
 div button {
@@ -115,15 +115,34 @@ button h2 {
 
 footer {
     text-align: center;
-    font-size: 1rem;
+    font-size: 1.2rem;
     left: 0;
     bottom: 0;
     width: 100%;
     margin-top: 50px;
+    text-transform: uppercase;
 }
 
+/* media queries */
 @media (max-width: 1000px) {
     #intro-container {
         width:80%;
     }
 }
+
+@media (max-width: 450px) {
+    body {
+    font-family: 'Josefin Sans', sans-serif;
+    }
+    h1 {
+    font-size: 1.5rem;
+    margin: 25px;
+    }
+    div button {
+        margin-top: 10px;
+    }
+    button h3 {
+        font-size: 1rem;
+    }
+}
+

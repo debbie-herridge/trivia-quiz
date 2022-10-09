@@ -18,6 +18,7 @@ function showName() {
   let previousScore = localStorage.getItem(previousGame);
   console.log(previousScore);
 
+  // if user got more than 3 show a tick next to subject if not display a cross
   if (previousScore >= 3){
     showResult.innerHTML = `<h2>${previousGame} <i class="fa-solid fa-check"></i></h2>`
   } else {
@@ -274,7 +275,7 @@ function newQuestion(){
     selectedChoice.parentElement.classList.add(classToApply);
     setTimeout(() => {
     selectedChoice.parentElement.classList.remove(classToApply);
-    }, 2500);
+    }, 2000);
 
     let correctElement = document.getElementById(correctAnswer);
     console.log(correctElement);
@@ -282,10 +283,10 @@ function newQuestion(){
     correctElement.parentElement.classList.add("correct");                            
     setTimeout(() => {
     correctElement.parentElement.classList.remove("correct");
-    }, 2500);
+    }, 2000);
     setTimeout(() => {
     newQuestion(); 
-    }, 2500);
+    }, 2000);
     }
   });
 });
