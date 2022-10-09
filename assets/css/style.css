@@ -6,34 +6,30 @@
 body {
     font-family: Quicksand, sans-serif;
     background-color: #FFE4C4;
+    margin: 0;
+    padding:0;
+    font-size: 62.5%;
+    color: #8B4513;
 }
 
 h1 {
-    color: #A0522D;
-    padding: 25px;
+    font-size: 3rem;
     text-align: center;
 }
 
 h2 {
-    font-size: x-large;
-    color: #A0522D;
+    font-size: 1.5rem;
     text-align: center;
     text-transform: uppercase;
 }
 
 h3 {
-    font-size: x-large;
-    color: #8B4513;
+    font-size: 2rem;
     text-align: center;
 }
 
-.intro-titles {
-    margin:50px;
-    padding:0;
-}
-
 /* homepage container */
-.container {
+#intro-container{
     top: 50%;
     left: 50%;
     width: 50%;
@@ -44,24 +40,20 @@ h3 {
     border-radius: 25px;
 }
 
-#heading {
-    font-size: xxx-large;
-    margin: 50px 0;
-}
-
-/* inital page name form */
 form {
     text-align: center;
     padding: 10%;
 }
 
+
 .name {
     background: transparent;
-    border: 3px solid #A0522D;
+    border: 2px solid #A0522D;
     border-radius: 25px;
-    width: 240px;
-    height: 40px;
     outline: none;
+    height: 40px;
+    margin: 20px 0;
+    width:75%;
 }
 
 input {
@@ -73,125 +65,62 @@ input::placeholder {
     color: #404040;
 }
 
-#submit {
-    margin: 30px;
-    height: 50px;
-    width: 250px;
-    font-size: medium;
-    background-color: #ffe4c4d9;
-    border: 3px solid #A0522D;
-}
-
-#submit:hover {
+#submit button:hover {
+    color: #ffe4c4d9;
     background-color: #A0522D;
-    color: white;
     cursor: pointer;
 }
 
-
-/* quiz container */
-.quiz-container {
-    top: 50%;
-    left: 50%;
-    width: 75%;
+/* quiz text inputs */
+.container {
+    text-align: center;
+    min-height: 300px;
     height: auto;
-    transform: translate(-50%, -50%);
-    background-color: #DEB887;
-    position: fixed;
-    border-radius: 25px;
+    margin-top: 15%;
 }
 
-/* quiz text inputs */
 div button {
     color: #8B4513;
     background-color: #ffe4c4d9;
     border: 2px solid #A0522D;
-    width: 75%;
-    margin: 5%;
     border-radius: 25px;
-    margin: 5px 13%;
-    height: 100px;
+    margin: 20px 0;
+    width:75%;
+    height:auto;
 }
 
-button a {
-    text-decoration: none;
+div button:hover {
+    border: 5px solid #A0522D;
+    cursor: pointer;
 }
 
-h1 h2 {
-    vertical-align: middle;
-}
-
-div h1 {
-    font-size: 200%;
-}
-
-div p {
-    color: #8B4513;
-    background-color: #ffe4c4d9;
-    border: 2px solid #A0522D;
-    width: 75%;
-    margin: 5%;
-    border-radius: 25px;
-    margin: 5px 13%;
-    height: 100px;
-}
-
-div h2:hover{
-    color: #DEB887;
-}
-
-.choice-section {
-    margin: 30px 0;
-}
 
 /* chosen answer responses */
 .correct {
-    background-color: #2E8B57;
+    background-color:#556B2F;
+    color:#BDB76B;
+    border: none;
+}
+
+.correct:hover {
     border: none;
 }
 
 .incorrect {
-    background-color: #FA8072;
-    border: none;
+    background-color:#D2B48C;
 }
 
 footer {
     text-align: center;
-    position: fixed;
+    font-size: 1rem;
     left: 0;
     bottom: 0;
     width: 100%;
+    margin-top: 50px;
 }
-
-/* end page */
-
-#end-page {
-    height:auto;
-}
-
-#end-page:hover {
-    border: 3px outset #A0522D;
-    cursor: pointer; 
-}
-
-
-/* media queries */
 
 @media (max-width: 1000px) {
-    .container {
-        width:70%;
-    }
-}
-
-@media (max-width: 560px) {
-    #submit {
-        width: 40%;
-    }
-    .name {
-        width: 70%;
-    }
-    h1 {
-        margin: 0;
-        padding: 0;
+    #intro-container {
+        width:80%;
     }
 }
