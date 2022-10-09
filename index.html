@@ -7,17 +7,18 @@
     <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
     <link rel="stylesheet" href="assets/css/style.css">
-    <title>Quiz</title>
+    <title>Trivia Quiz</title>
 </head>
 <body>
-    
+    <!-- opening page to get users details -->
     <div id="intro-container">
-            <form id="get-name" method="get" action="quiz.html">
-                <h1>What is your name?</h1>
-                <input class="name" id="name" type="text" placeholder="or chose a nickname!" name= "" required/>
-                <br>
-                <button id="submit" type="submit" onclick="getName()"><h2>Lets go!</h2></button>
-            </form>
+        <form id="get-name" method="get" action="quiz.html">
+            <h1>Hi there!</h1>
+            <h2>Shall we start with your name?</h2>
+            <input class="name" id="name" type="text" placeholder="or chose a nickname!" name= "" required/>
+            <br>
+            <button id="submit" type="submit" onclick="getName()"><h2>Lets go!</h2></button>
+        </form>
     </div>
     <script src="assets/js/script.js"></script>
 </body>

@@ -9,11 +9,14 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Quiz</title>
 </head>
+<!-- function to retrieve users name input -->
 <body onload="showName()">
     <div class="container">
+        <!-- display users name -->
         <h1 id="name-result"></h1>
         <h3>Choose your subject:</h3>
         <div class="choice-section">
+                <!-- logs users choice to filter upcoming questions -->
                 <button onclick="chooseSubject(this.id)" id="generalKnowledge">
                         <h2>General Knowledge</h2>
                 </button>
