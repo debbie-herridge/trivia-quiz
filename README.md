@@ -223,6 +223,17 @@ It also highlighted the unused function, as these where called upon in the HTML 
 ![js hint validator](assets/images/js-hint-validator.png)
 ![js hint validator](assets/images/js-hint-validator-functions.png)
 
+## Deployment
+
+The site was created on GitPod then deployed to GitHub pages. To deploy the site:
+
+- In the GitHub repository, click to Settings.
+- On the left navagation bar click Pages.
+- Change the drop down on Branch to 'main' then click save.
+- Once it has been deployed a link will show at the top with the link to the site.
+
+Click [here](https://github.com/debbie-herridge/trivia-quiz) to view my GitHub repository.
+
 # Credits
 
 ## Tutorials for inserting API:
