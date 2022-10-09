@@ -245,10 +245,7 @@ choices.forEach(choice => {
     const selectedAnswer = selectedChoice.dataset["number"];
     
     var classToApply = selectedAnswer == currentQuestion.answer ? "correct" : "incorrect";
-    console.log(classToApply);
-                                                 var correctAnswer = currentQuestion["choice"+4]
-    console.log('fgueigfuiebgf');
-    console.log(correctAnswer);
+    var correctAnswer = currentQuestion["choice"+4]
                                                 
 
     if(classToApply === "correct") {
@@ -258,20 +255,31 @@ choices.forEach(choice => {
       setTimeout(() => {
       selectedChoice.parentElement.classList.remove(classToApply);
       }, 1000);
+      
+      setTimeout(() => {
+      newQuestion(); 
+      }, 1000);
 
-                                                } else {
-                                                  console.log(correctAnswer.parentElement);
-                                                  let correctElement = document.getElementById(correctAnswer);
-                                                  console.log(correctElement);
+      } else {
+      selectedChoice.parentElement.classList.add(classToApply);
+      setTimeout(() => {
+      selectedChoice.parentElement.classList.remove(classToApply);
+      }, 2500);
+
+
+      let correctElement = document.getElementById(correctAnswer);
+      console.log(correctElement);
                                                   
-                                                  correctElement.parentElement.classList.add("correct");
+      correctElement.parentElement.classList.add("correct");
                                         
-                                                  setTimeout(() => {
-                                                  correctElement.parentElement.classList.remove("correct");
-                                                  }, 1000);
-                                                }
-  
-    newQuestion(); 
+      setTimeout(() => {
+      correctElement.parentElement.classList.remove("correct");
+      }, 2500);
+
+      setTimeout(() => {
+      newQuestion(); 
+      }, 2500);
+      }
   });
 });
 
