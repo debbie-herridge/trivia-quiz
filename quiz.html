@@ -15,22 +15,30 @@
 <body onload="showName()">
     <div class="container">
         <!-- display users name -->
-        <h1 id="name-result"></h1>
+        <h1 id="name-result">Insert name</h1>
         <h3>Choose your subject:</h3>
         <div class="choice-section">
                 <!-- logs users choice to filter upcoming questions -->
-                <button onclick="chooseSubject(this.id)" id="generalKnowledge">
-                        <h2>General Knowledge</h2>
-                </button>
-                <button onclick="chooseSubject(this.id)" id="mythology">
-                        <h2>Mythology</h2>
-                </button>
-                <button onclick="chooseSubject(this.id)" id="history">
-                        <h2>History</h2>
-                </button>
-                <button onclick="chooseSubject(this.id)" id="geography">
-                        <h2>Geography</h2>
-                </button>
+                <h3>
+                       <button onclick="chooseSubject(this.id)" id="generalKnowledge" class="uppercase">
+                                General Knowledge
+                        </button>
+                </h3>
+                <h3>
+                        <button onclick="chooseSubject(this.id)" id="mythology" class="uppercase">
+                                Mythology
+                        </button>
+                </h3>
+                <h3>
+                        <button onclick="chooseSubject(this.id)" id="history" class="uppercase">
+                                History
+                        </button>
+                </h3>
+                <h3>
+                        <button onclick="chooseSubject(this.id)" id="geography" class="uppercase">
+                                Geography
+                        </button>
+                </h3>
         </div>
     </div>
     <div>

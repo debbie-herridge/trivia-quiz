@@ -28,7 +28,11 @@ h3 {
     text-align: center;
 }
 
-/* homepage container */
+button {
+    font-family: Quicksand, sans-serif;
+}
+
+/* user introduction container */
 #intro-container{
     top: 50%;
     left: 50%;
@@ -40,11 +44,11 @@ h3 {
     border-radius: 25px;
 }
 
+/* introduction form */
 form {
     text-align: center;
     padding: 10%;
 }
-
 
 .name {
     background: transparent;
@@ -54,6 +58,11 @@ form {
     height: 40px;
     margin: 20px 0;
     width:75%;
+}
+
+h2 button {
+    text-transform: uppercase;
+    font-size: 1.25rem;
 }
 
 input {
@@ -71,7 +80,7 @@ input::placeholder {
     cursor: pointer;
 }
 
-/* quiz text inputs */
+/* quiz container */
 .container {
     text-align: center;
     min-height: 300px;
@@ -84,9 +93,9 @@ div button {
     background-color: #ffe4c4d9;
     border: 2px solid #A0522D;
     border-radius: 25px;
-    margin: 20px 0;
     width:75%;
     height:auto;
+    min-height: 50px;
 }
 
 div button:hover {
@@ -94,7 +103,12 @@ div button:hover {
     cursor: pointer;
 }
 
-button h2 {
+h3 button {
+    font-size: 2rem;
+    padding: 20px;
+}
+
+.uppercase {
     text-transform: uppercase;
 }
 
@@ -143,6 +157,9 @@ footer {
     }
     button h3 {
         font-size: 1rem;
+    }
+    button {
+        font-family: 'Josefin Sans', sans-serif;
     }
 }
 

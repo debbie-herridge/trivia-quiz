@@ -20,9 +20,9 @@ function showName() {
 
   // if user got more than 3 show a tick next to subject if not display a cross
   if (previousScore >= 3){
-    showResult.innerHTML = `<h2>${previousGame} <i class="fa-solid fa-check"></i></h2>`
+    showResult.innerHTML = `${previousGame} <i class="fa-solid fa-check"></i>`
   } else {
-    showResult.innerHTML = `<h2>${previousGame} <i class="fa-regular fa-circle-xmark"></i>`
+    showResult.innerHTML = `${previousGame} <i class="fa-regular fa-circle-xmark"></i>`
   }
 };
 
@@ -262,9 +262,9 @@ function newQuestion(){
   if(classToApply === "correct") {
     incrementScore(correctBonus);
 
-    selectedChoice.parentElement.classList.add(classToApply);
+    selectedChoice.classList.add(classToApply);
     setTimeout(() => {
-    selectedChoice.parentElement.classList.remove(classToApply);
+    selectedChoice.classList.remove(classToApply);
     }, 1000);
     setTimeout(() => {
     newQuestion(); 
@@ -272,17 +272,17 @@ function newQuestion(){
     } else {
 
     // If incorrect, the correct answers will be displayed
-    selectedChoice.parentElement.classList.add(classToApply);
+    selectedChoice.classList.add(classToApply);
     setTimeout(() => {
-    selectedChoice.parentElement.classList.remove(classToApply);
+    selectedChoice.classList.remove(classToApply);
     }, 2000);
 
     let correctElement = document.getElementById(correctAnswer);
     console.log(correctElement);
                                                   
-    correctElement.parentElement.classList.add("correct");                            
+    correctElement.classList.add("correct");                            
     setTimeout(() => {
-    correctElement.parentElement.classList.remove("correct");
+    correctElement.classList.remove("correct");
     }, 2000);
     setTimeout(() => {
     newQuestion(); 
