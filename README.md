@@ -148,8 +148,8 @@ Initally none of my HTML code passed the validator. This was due to my heading b
 
 By swapping the heading to be outside of the button I had to amend my JavaScript code as it was previously written to add a class to the parent element to show the colour response for the users choice. This was a quick fix and meant my code worked as per before.
 
-[https://validator.w3.org/](assets/images/html-validator-pass.png)
-[https://appdevtools.com/html-validator](assets/images/second-html-validator-pass.png)
+![https://validator.w3.org/](assets/images/html-validator-pass.png)
+![https://appdevtools.com/html-validator](assets/images/second-html-validator-pass.png)
 
 ### Index HTML
 
@@ -175,9 +175,9 @@ The CSS code passed the validator with no issues.
 
 ## JavaScript Validator
 
-I ran the JavaScript through 3 different validators:
+I ran the JavaScript through 4 different validators:
 
-### 1
+### 1:
 
 [CodeBeautify](https://codebeautify.org/jsvalidate)
 
@@ -192,7 +192,7 @@ All of the issues raised by this validator have not been brought up in the follo
 ![CodeBeautify before](assets/images/codebeautify-js-validator-before.png)
 ![CodeBeautify after](assets/images/codebeautify-js-validator-after.png)
 
-### 2
+### 2:
 
 [Esprima](https://esprima.org/demo/validate.html)
 
@@ -200,7 +200,7 @@ The JavaScript code passed this validator with no issues.
 
 ![Esprima](assets/images/esprima-js-validator.png)
 
-### 3
+### 3:
 
 [ExtendsClass](https://extendsclass.com/javascript-fiddle.html)
 
@@ -209,6 +209,17 @@ This validator brought up no distinct issue, rather advise on [''] being better 
 The other advise this validator raised was that the code used on this project is only available in ES6. Again, I see no reason to amend my code as the systems used to display this project are fully supportive of the latest JavaScript revision.
 
 ![EntendsClass](assets/images/extends-js-validator.png)
+
+### 4:
+
+[JSHint](https://jshint.com/)
+
+This validator brought up 36 warnings, the majority to do with ES6 but it did also bring up the dot notation advice from the previous validator.
+
+It also highlighted the unused function, as these where called upon in the HTML rather than in the JS script.
+
+![js hint validator](assets/images/js-hint-validator.png)
+![js hint validator](assets/images/js-hint-validator-functions.png)
 
 # Credits
 
