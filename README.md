@@ -148,6 +148,8 @@ Initally none of my HTML code passed the validator. This was due to my heading b
 
 By swapping the heading to be outside of the button I had to amend my JavaScript code as it was previously written to add a class to the parent element to show the colour response for the users choice. This was a quick fix and meant my code worked as per before.
 
+### Pass html validators for w3.org and AppDevTools.com
+
 ![https://validator.w3.org/](assets/images/html-validator-pass.png)
 ![https://appdevtools.com/html-validator](assets/images/second-html-validator-pass.png)
 
