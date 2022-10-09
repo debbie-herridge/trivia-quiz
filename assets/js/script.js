@@ -4,10 +4,25 @@ function getName(){
   localStorage.setItem('userName', name);
 }
 
-// on load of quiz game retrieve users name and populate heading
+// on load of quiz game subject choice
 function showName() {
+  // retrieve users name and populate heading
   updateName = localStorage.getItem('userName')
   document.getElementById("name-result").innerText = `Welcome ${updateName}!`
+
+  // get variables to show previous subject and show pass or fail
+  let previousGame = localStorage.getItem('userChoice');
+  console.log(previousGame);
+  let showResult = document.getElementById(previousGame);
+  console.log(showResult);
+  let previousScore = localStorage.getItem(previousGame);
+  console.log(previousScore);
+
+  if (previousScore >= 3){
+    showResult.innerHTML = `<h2>${previousGame} <i class="fa-solid fa-check"></i></h2>`
+  } else {
+    showResult.innerHTML = `<h2>${previousGame} <i class="fa-regular fa-circle-xmark"></i>`
+  }
 };
 
 // save users subject choice into local storage and direct to quiz page
